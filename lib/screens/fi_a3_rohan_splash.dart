@@ -27,7 +27,7 @@ class _FiA3RohanSplasherState extends State<FiA3RohanSplasher> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: FiA3RohanColors.darkblue,
+      backgroundColor: Colors.white30,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

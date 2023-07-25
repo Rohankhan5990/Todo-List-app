@@ -1,5 +1,6 @@
 import 'package:fi_a3_rohan/core/fi_a3_rohan_textfield_email.dart';
 import 'package:fi_a3_rohan/core/fi_a3_rohan_textfield_password.dart';
+import 'package:fi_a3_rohan/screens/fi_a3_rohan_home.dart';
 import 'package:fi_a3_rohan/utlis/fi_a3_rohan_constants.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +42,12 @@ class FiA3RohanLogin extends StatelessWidget {
               const FiA3RohanTextFieldPassword(),
               FiA3RohanSizedBox.height10,
               FiA3RohanButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const FiA3RohanHome()));
+                },
                 color: Colors.red,
                 child: const Text("login"),
               ),
