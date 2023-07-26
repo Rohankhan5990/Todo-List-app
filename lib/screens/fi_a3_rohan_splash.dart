@@ -27,7 +27,7 @@ class _FiA3RohanSplasherState extends State<FiA3RohanSplasher> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Colors.white30,
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +45,7 @@ class _FiA3RohanSplasherState extends State<FiA3RohanSplasher> {
                     fontSize: 40,
                     letterSpacing: 4,
                     fontFamily: 'Rubik Medium',
-                    color: Colors.white),
+                    color: Colors.white54),
                 children: <InlineSpan>[
                   TextSpan(
                       text: '   Time',
