@@ -5,14 +5,12 @@ class DataWrite {
       FirebaseFirestore.instance.collection('users');
   void addDataToFirestore(String task) async {
     try {
-      await _usersCollection.add(
-        {
-          'task': task,
-        },
-      );
-      print('Data added successfully!');
+      final payload = {'task': task};
+      await _usersCollection
+          .doc(DateTime.now().microsecondsSinceEpoch.toString())
+          .set(payload);
     } catch (e) {
-      print('Error adding data: $e');
+      rethrow;
     }
   }
 }
