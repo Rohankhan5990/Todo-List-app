@@ -1,13 +1,9 @@
-import 'dart:developer';
-
-import 'package:fi_a3_rohan/design/fi_a3_rohan_alert.dart';
+import 'package:fi_a3_rohan/design/fi_a3_rohan_alert_write.dart';
 import 'package:fi_a3_rohan/utlis/fi_a3_rohan_constants.dart';
 import 'package:fi_a3_rohan/utlis/fi_a3_rohan_images.dart';
+import 'package:fi_a3_rohan/widgets/fi_a3_rohan_home_card.dart';
 import 'package:flutter/material.dart';
-
-import '../design/fi_a3_rohan_alert.dart';
 import '../design/fi_a3_rohan_avator.dart';
-import '../services/write.dart';
 
 class FiA3RohanHome extends StatefulWidget {
   const FiA3RohanHome({super.key});
@@ -17,15 +13,7 @@ class FiA3RohanHome extends StatefulWidget {
 }
 
 class _FiA3RohanHomeState extends State<FiA3RohanHome> {
-  List<String> todoList = []; // List to store the todo items
-  bool showListView = false; // Flag to show/hide the ListView
-
-  // Function to add a new item to the todoList
-  void addItemToList() {
-    setState(() {
-      todoList.add(showListView ? 'New Task ${todoList.length + 1}' : " ");
-    });
-  }
+  bool showListView = false;
 
   @override
   Widget build(BuildContext context) {
@@ -41,12 +29,15 @@ class _FiA3RohanHomeState extends State<FiA3RohanHome> {
                 children: [
                   const Icon(Icons.menu),
                   FiA2RohanAvator(
-                    child: Image.asset(FiA3RohanImages.girl2),
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.asset(FiA3RohanImages.rohan,
+                            fit: BoxFit.cover)),
                   ),
                 ],
               ),
             ),
-            FiA3RohanSizedBox.height30,
+            FiA3RohanSizedBox.height10,
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -62,36 +53,14 @@ class _FiA3RohanHomeState extends State<FiA3RohanHome> {
                 ),
               ],
             ),
-            Container(
-              width: double.infinity,
-              height: showListView
-                  ? 520
-                  : 0, // Show/hide the ListView container based on the flag
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(30),
-                ),
-              ),
-              child: ListView.builder(
-                itemCount: todoList.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(
-                      todoList[index],
-                    ),
-                  );
-                },
-              ),
-            ),
+            const HomeCard(),
             FiA3RohanSizedBox.height10,
             InkWell(
               onTap: () {
                 showDialog(
                   context: context,
-                  builder: (context) => const FiA3RohanAlert(),
+                  builder: (context) => const FiA3RohanAlertWrite(),
                 );
-                // Add an item to the list when the button is pressed
                 if (!showListView) {
                   setState(
                     () {
@@ -100,15 +69,26 @@ class _FiA3RohanHomeState extends State<FiA3RohanHome> {
                   );
                 }
               },
-              child: Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 253, 232, 232),
-                  borderRadius: BorderRadius.circular(40),
-                  border: Border.all(color: Colors.black, width: 3),
-                ),
-                child: const Icon(Icons.add),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FiA3RohanSizedBox.width10,
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 253, 232, 232),
+                      borderRadius: BorderRadius.circular(40),
+                      border: Border.all(color: Colors.black, width: 3),
+                    ),
+                    child: const Icon(Icons.add),
+                  ),
+                  FiA3RohanSizedBox.width10,
+                  const Text(
+                    "Add Task",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
             ),
           ],
