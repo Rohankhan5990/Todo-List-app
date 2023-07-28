@@ -1,14 +1,11 @@
 import 'dart:async';
-import 'dart:html';
 import 'package:fi_a3_rohan/utlis/fi_a3_rohan_constants.dart';
 import 'package:fi_a3_rohan/utlis/fi_a3_rohan_images.dart';
 import 'package:flutter/material.dart';
-
 import 'fi_a3_rohan_login.dart';
 
 class FiA3RohanSplasher extends StatefulWidget {
   const FiA3RohanSplasher({super.key});
-
   @override
   State<FiA3RohanSplasher> createState() => _FiA3RohanSplasherState();
 }
@@ -27,7 +24,7 @@ class _FiA3RohanSplasherState extends State<FiA3RohanSplasher> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 187, 62, 53),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -39,21 +36,25 @@ class _FiA3RohanSplasherState extends State<FiA3RohanSplasher> {
               image: AssetImage(FiA3RohanImages.clock),
             ),
             FiA3RohanSizedBox.height5,
-            Text.rich(TextSpan(
+            Text.rich(
+              TextSpan(
                 text: ' Keep On\n',
                 style: TextStyle(
                     fontSize: 40,
                     letterSpacing: 4,
                     fontFamily: 'Rubik Medium',
-                    color: Colors.white54),
+                    color: Colors.white),
                 children: <InlineSpan>[
                   TextSpan(
-                      text: '   Time',
-                      style: TextStyle(
-                          fontSize: 40,
-                          fontFamily: 'Rubik Medium',
-                          color: Colors.white)),
-                ])),
+                    text: '   Time',
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontFamily: 'Rubik Medium',
+                        color: Colors.white),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
