@@ -30,7 +30,7 @@ class _FiA3RohanTextFieldPasswordState
         child: TextFormField(
           obscureText: passwordVisible,
           decoration: InputDecoration(
-            fillColor: Color(0xffF8F9FA),
+            fillColor: const Color(0xffF8F9FA),
             filled: true,
             hintText: 'password',
             prefixIcon: const Icon(
@@ -49,11 +49,11 @@ class _FiA3RohanTextFieldPasswordState
               },
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Color(0xffE4E7EB)),
+              borderSide: const BorderSide(color: Color(0xffE4E7EB)),
               borderRadius: BorderRadius.circular(20),
             ),
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Color(0xffE4E7EB)),
+              borderSide: const BorderSide(color: Color(0xffE4E7EB)),
               borderRadius: BorderRadius.circular(20),
             ),
           ),
