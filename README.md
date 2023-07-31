@@ -1,18 +1,22 @@
-
+[Green Gradient Application Showcase Presentation.pdf](https://github.com/Rohankhan5990/Todo-List-app/files/12215110/Green.Gradient.Application.Showcase.Presentation.pdf)
 # Keep on Time: Your Ultimate To-Do List App
 
 Keep on Time is an easy-to-use app that helps you stay organized by keeping track of your tasks and deadlines. It reminds you when things need to be done, lets you prioritize tasks, and shows your progress. It works on all your devices and keeps your information safe. It's perfect for students, professionals, or anyone with a busy schedule who wants to be more productive and less stressed.
 
+![Green Gradient Application Showcase Presentation](https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/99cb6af2-28c6-4644-bdd9-629d71d8ca72)
+
+
+
 # Screenshots
 <div>
-  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/e6677d4a-e797-49b5-97aa-98ceca1f8cc0" alt="Image 1" width="400" />
-  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/cbccd400-9d28-4b6f-b70b-4792caf5168e" alt="Image 1" width="400" />
-  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/c8c0d7f2-058c-45bf-bccd-336cec2de245" alt="Image 1" width="400" />
-  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/fbf3f30d-a617-4bc0-b985-de03668f508e" alt="Image 1" width="400" />
-    <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/cb808249-8d81-4383-a3a7-636431581e09" alt="Image 1" width="400" />
-  
-  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/e8c2ade5-11f5-4404-b42e-b68143c54d58" alt="Image 1" width="400" />
-    <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/26dacd9f-e527-4bc5-af9d-0b15146b89b2" alt="Image 1" width="400" />
-  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/1e364350-0bc9-4467-8780-e06b4f2b3408" alt="Image 1" width="400" />
+  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/7f81b39e-31aa-4316-b8cf-607f50d2946c" alt="Image 1" width="400" />
+  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/3d598ef0-750f-4a50-ae24-5f78dffc5b10" alt="Image 1" width="400" />
+  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/2d68460b-5208-48b4-ac7d-6e8e464547a9" alt="Image 1" width="400" />
+  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/cb242452-8546-4055-a8d4-a3ec64fe3f9d" alt="Image 1" width="400" />
+    <img src="(https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/6849cac7-c3c1-4c22-b25d-10255c1838f2" alt="Image 1" width="400" />
+  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/5cda79cb-b13d-448f-8dc6-e2aae5333ab7" alt="Image 1" width="400" />
+    <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/6abb5751-2408-4a63-bbfb-fe308ea4e4ff" alt="Image 1" width="400" />
+  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/c5184fef-85fe-4626-ae3a-381bc4073e0d" alt="Image 1" width="400" />
+  <img src="https://github.com/Rohankhan5990/Todo-List-app/assets/134016581/592287b6-35b7-47a7-8864-79ec8b7f2750" alt="Image 1" width="400" />
 
 </div>
