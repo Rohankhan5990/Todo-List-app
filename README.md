@@ -1,4 +1,3 @@
-[Green Gradient Application Showcase Presentation.pdf](https://github.com/Rohankhan5990/Todo-List-app/files/12215110/Green.Gradient.Application.Showcase.Presentation.pdf)
 # Keep on Time: Your Ultimate To-Do List App
 
 Keep on Time is an easy-to-use app that helps you stay organized by keeping track of your tasks and deadlines. It reminds you when things need to be done, lets you prioritize tasks, and shows your progress. It works on all your devices and keeps your information safe. It's perfect for students, professionals, or anyone with a busy schedule who wants to be more productive and less stressed.
