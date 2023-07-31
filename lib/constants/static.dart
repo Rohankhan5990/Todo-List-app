@@ -25,3 +25,12 @@ class FiA3RohanColors {
   static const darkblue = Color(0xff4d5bbf);
   static const lightgrey = Colors.grey;
 }
+
+class AppConstants {
+  static const String usersCollection = 'users';
+}
+
+class FiA3RohanImages {
+  static const String clock = 'assets/clock.png';
+  static const String rohan = 'assets/pic.jpeg';
+}

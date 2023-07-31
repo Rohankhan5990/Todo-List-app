@@ -1,5 +1,5 @@
+import 'package:fi_a3_rohan/services/todo_firebase.dart';
 import 'package:flutter/material.dart';
-import '../services/modify.dart';
 
 // ignore: must_be_immutable
 class FiA3RohanAlertUpdate extends StatefulWidget {
@@ -25,7 +25,8 @@ class _FiA3RohanAlertUpdateState extends State<FiA3RohanAlertUpdate> {
             TextButton(
                 onPressed: () {
                   String taskdata = controller.text;
-                  UpdateData().updateDataToFirestore(widget.data, taskdata);
+                  TodoFirebaseHelper()
+                      .updateDataToFirestore(widget.data, taskdata);
                   Navigator.pop(context);
                 },
                 child: const Text("OK"))

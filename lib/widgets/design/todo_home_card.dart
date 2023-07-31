@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../design/fi_a3_rohan_iconbox.dart';
-import '../services/read.dart';
+import 'todo_iconbox.dart';
+import '../../services/todo_firebase.dart';
 
 class HomeCard extends StatefulWidget {
   const HomeCard({super.key});
@@ -15,9 +15,9 @@ class _HomeCardState extends State<HomeCard> {
     return Column(
       children: [
         SizedBox(
-          height: 500,
+          height: 400,
           child: StreamBuilder(
-            stream: UserProvider.fetchUser(),
+            stream: TodoFirebaseHelper.fetchUser(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(
@@ -37,7 +37,21 @@ class _HomeCardState extends State<HomeCard> {
                           title: Text(
                             userid['task'],
                           ),
-                          leading: Text('${index + 1}'),
+                          leading: Container(
+                            width: 30,
+                            height: 30,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                border:
+                                    Border.all(color: Colors.black, width: 2)),
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8, top: 2),
+                              child: Text(
+                                '${index + 1}',
+                                style: const TextStyle(fontSize: 20),
+                              ),
+                            ),
+                          ),
                           trailing: InkWell(
                             onTap: () {},
                             child: SizedBox(

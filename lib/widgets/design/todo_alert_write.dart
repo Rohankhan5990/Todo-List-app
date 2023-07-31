@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../services/write.dart';
+import '../../services/todo_firebase.dart';
 
 class FiA3RohanAlertWrite extends StatelessWidget {
   const FiA3RohanAlertWrite({super.key});
@@ -18,7 +18,7 @@ class FiA3RohanAlertWrite extends StatelessWidget {
             TextButton(
                 onPressed: () {
                   taskdata = controller.text;
-                  DataWrite().addDataToFirestore(taskdata);
+                  TodoFirebaseHelper().addDataToFirestore(taskdata);
                   Navigator.pop(context);
                 },
                 child: const Text("OK"))
