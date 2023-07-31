@@ -24,7 +24,7 @@ class _FiA3RohanHomeState extends State<FiA3RohanHome> {
             children: [
               Container(
                 width: double.infinity,
-                height: 200,
+                height: 180,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 33, 172, 182),
                   borderRadius: BorderRadius.only(

@@ -15,7 +15,7 @@ class _HomeCardState extends State<HomeCard> {
     return Column(
       children: [
         SizedBox(
-          height: 400,
+          height: 320,
           child: StreamBuilder(
             stream: TodoFirebaseHelper.fetchUser(),
             builder: (context, snapshot) {

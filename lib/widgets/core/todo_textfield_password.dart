@@ -20,42 +20,37 @@ class _FiA3RohanTextFieldPasswordState
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-      ),
-      child: SizedBox(
-        width: 350,
-        height: 90,
-        child: TextFormField(
-          obscureText: passwordVisible,
-          decoration: InputDecoration(
-            fillColor: const Color(0xffF8F9FA),
-            filled: true,
-            hintText: 'password',
-            prefixIcon: const Icon(
-              Icons.lock_open,
-              color: Color(0xff323F4B),
-            ),
-            suffixIcon: IconButton(
-              icon: Icon(
-                  passwordVisible ? Icons.visibility : Icons.visibility_off),
-              onPressed: () {
-                setState(
-                  () {
-                    passwordVisible = !passwordVisible;
-                  },
-                );
-              },
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Color(0xffE4E7EB)),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Color(0xffE4E7EB)),
-              borderRadius: BorderRadius.circular(20),
-            ),
+    return SizedBox(
+      width: 320,
+      height: 90,
+      child: TextFormField(
+        obscureText: passwordVisible,
+        decoration: InputDecoration(
+          fillColor: const Color(0xffF8F9FA),
+          filled: true,
+          hintText: 'password',
+          prefixIcon: const Icon(
+            Icons.lock_open,
+            color: Color(0xff323F4B),
+          ),
+          suffixIcon: IconButton(
+            icon:
+                Icon(passwordVisible ? Icons.visibility : Icons.visibility_off),
+            onPressed: () {
+              setState(
+                () {
+                  passwordVisible = !passwordVisible;
+                },
+              );
+            },
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Color(0xffE4E7EB)),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Color(0xffE4E7EB)),
+            borderRadius: BorderRadius.circular(20),
           ),
         ),
       ),

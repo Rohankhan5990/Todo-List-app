@@ -6,7 +6,7 @@ class FiA3RohanTextFieldEmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 350,
+      width: 318,
       height: 80,
       child: TextFormField(
         decoration: InputDecoration(
