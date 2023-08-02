@@ -16,8 +16,8 @@ class _FiA3RohanSplasherState extends State<FiA3RohanSplasher> {
     // TODO: implement initState
     super.initState();
     Timer(const Duration(milliseconds: 4000), () {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const FiA3RohanLogin()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => FiA3RohanLogin()));
     });
   }
 

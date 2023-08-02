@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:file_picker/file_picker.dart';
 
 import '../constants/static.dart';
 
@@ -7,6 +10,7 @@ class TodoFirebaseHelper {
   final CollectionReference _usersCollection =
       FirebaseFirestore.instance.collection('users');
   static const userCollection = AppConstants.usersCollection;
+  PlatformFile? platformFile;
 
   void addDataToFirestore(String task) async {
     try {

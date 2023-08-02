@@ -4,11 +4,13 @@ class FiA3RohanButton extends StatelessWidget {
   final VoidCallback onPressed;
   final Color color;
   final Widget child;
-  const FiA3RohanButton({
+  bool loading;
+  FiA3RohanButton({
     super.key,
     required this.child,
     required this.onPressed,
     required this.color,
+    this.loading = false,
   });
 
   @override
@@ -28,7 +30,14 @@ class FiA3RohanButton extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: child,
+          child: loading
+              ? const CircularProgressIndicator(
+                  strokeWidth: 3,
+                  color: Colors.white,
+                )
+              : Center(
+                  child: child,
+                ),
         ),
       ),
     );
