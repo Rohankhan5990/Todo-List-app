@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
-import '../services/modify.dart';
+import '../../services/todo_firebase.dart';
 
-// ignore: must_be_immutable
-class FiA3RohanAlertUpdate extends StatefulWidget {
-  String data;
-  FiA3RohanAlertUpdate({super.key, required this.data});
-
-  @override
-  State<FiA3RohanAlertUpdate> createState() => _FiA3RohanAlertUpdateState();
-}
-
-class _FiA3RohanAlertUpdateState extends State<FiA3RohanAlertUpdate> {
+class FiA3RohanAlertWrite extends StatelessWidget {
+  FiA3RohanAlertWrite({super.key});
+  static String taskdata = '';
   @override
   Widget build(BuildContext context) {
     TextEditingController controller = TextEditingController();
@@ -24,8 +17,8 @@ class _FiA3RohanAlertUpdateState extends State<FiA3RohanAlertUpdate> {
           actions: [
             TextButton(
                 onPressed: () {
-                  String taskdata = controller.text;
-                  UpdateData().updateDataToFirestore(widget.data, taskdata);
+                  taskdata = controller.text;
+                  TodoFirebaseHelper().addDataToFirestore(taskdata, "");
                   Navigator.pop(context);
                 },
                 child: const Text("OK"))

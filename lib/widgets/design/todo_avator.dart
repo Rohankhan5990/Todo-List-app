@@ -2,12 +2,18 @@ import 'package:flutter/material.dart';
 
 class FiA2RohanAvator extends StatelessWidget {
   final Widget child;
-  const FiA2RohanAvator({super.key, required this.child});
+  final double width;
+  final double height;
+  const FiA2RohanAvator(
+      {super.key,
+      required this.child,
+      required this.height,
+      required this.width});
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
-      width: 60,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
         color: Colors.black12,
         borderRadius: BorderRadius.circular(50),

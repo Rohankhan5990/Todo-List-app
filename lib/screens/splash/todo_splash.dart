@@ -1,8 +1,9 @@
 import 'dart:async';
-import 'package:fi_a3_rohan/utlis/fi_a3_rohan_constants.dart';
-import 'package:fi_a3_rohan/utlis/fi_a3_rohan_images.dart';
+import 'package:fi_a3_rohan/constants/static.dart';
+import 'package:fi_a3_rohan/screens/splash/todo_splash_services.dart';
+
 import 'package:flutter/material.dart';
-import 'fi_a3_rohan_login.dart';
+import '../login/todo_login.dart';
 
 class FiA3RohanSplasher extends StatefulWidget {
   const FiA3RohanSplasher({super.key});
@@ -11,20 +12,18 @@ class FiA3RohanSplasher extends StatefulWidget {
 }
 
 class _FiA3RohanSplasherState extends State<FiA3RohanSplasher> {
+  SplashServices splashscreen = SplashServices();
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(const Duration(milliseconds: 4000), () {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const FiA3RohanLogin()));
-    });
+    splashscreen.login(context);
   }
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 187, 62, 53),
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -40,17 +39,13 @@ class _FiA3RohanSplasherState extends State<FiA3RohanSplasher> {
               TextSpan(
                 text: ' Keep On\n',
                 style: TextStyle(
-                    fontSize: 40,
-                    letterSpacing: 4,
-                    fontFamily: 'Rubik Medium',
-                    color: Colors.white),
+                  fontSize: 40,
+                  color: Colors.black,
+                ),
                 children: <InlineSpan>[
                   TextSpan(
-                    text: '   Time',
-                    style: TextStyle(
-                        fontSize: 40,
-                        fontFamily: 'Rubik Medium',
-                        color: Colors.white),
+                    text: '    Time',
+                    style: TextStyle(fontSize: 40, color: Colors.black),
                   ),
                 ],
               ),

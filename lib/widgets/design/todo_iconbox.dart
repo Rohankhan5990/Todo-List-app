@@ -1,7 +1,7 @@
-import 'package:fi_a3_rohan/design/fi_a3_rohan_alert_update.dart';
-import 'package:fi_a3_rohan/utlis/fi_a3_rohan_constants.dart';
+import 'package:fi_a3_rohan/widgets/design/todo_alert_update.dart';
+import 'package:fi_a3_rohan/services/todo_firebase.dart';
+import 'package:fi_a3_rohan/constants/static.dart';
 import 'package:flutter/material.dart';
-import '../services/delete.dart';
 
 class IconBox extends StatefulWidget {
   final String data;
@@ -21,6 +21,7 @@ class _IconBoxState extends State<IconBox> {
               context: context,
               builder: (context) => FiA3RohanAlertUpdate(data: widget.data),
             );
+            TodoFirebaseHelper().updateDataToFirestore(widget.data, "", "");
           },
           child: Container(
             height: 35,
@@ -38,7 +39,7 @@ class _IconBoxState extends State<IconBox> {
         FiA3RohanSizedBox.width5,
         InkWell(
           onTap: () {
-            DataDelete().deleteDataToFirestore(widget.data);
+            TodoFirebaseHelper().deleteDataToFirestore(widget.data);
           },
           child: Container(
             height: 35,
