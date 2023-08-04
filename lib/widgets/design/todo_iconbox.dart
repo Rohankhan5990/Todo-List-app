@@ -21,8 +21,7 @@ class _IconBoxState extends State<IconBox> {
               context: context,
               builder: (context) => FiA3RohanAlertUpdate(data: widget.data),
             );
-            TodoFirebaseHelper()
-                .updateDataToFirestore(widget.data, "Rohan khan is a time");
+            TodoFirebaseHelper().updateDataToFirestore(widget.data, "", "");
           },
           child: Container(
             height: 35,

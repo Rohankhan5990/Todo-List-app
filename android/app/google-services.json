@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "992576190696-h45une5udf3qs3pv945708p3jgej0ug6.apps.googleusercontent.com",
+          "client_id": "992576190696-n6s9d73f5tco6u10tjaopjsvagmemit6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fi_a3_rohan",
+            "certificate_hash": "49e7c6943d1ce0f0891229d404d45831bf5a3b0e"
+          }
+        },
+        {
+          "client_id": "992576190696-9tj3jvnrsuuqpig7gg9h8lfkjjpkni0q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,8 +35,15 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "992576190696-h45une5udf3qs3pv945708p3jgej0ug6.apps.googleusercontent.com",
+              "client_id": "992576190696-9tj3jvnrsuuqpig7gg9h8lfkjjpkni0q.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "992576190696-7cc0l4pfhgp7kvh8kbin12fgno62thos.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fiA3Rohan.RunnerTests"
+              }
             }
           ]
         }

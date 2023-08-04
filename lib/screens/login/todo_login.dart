@@ -1,6 +1,7 @@
 import 'package:fi_a3_rohan/constants/static.dart';
 import 'package:fi_a3_rohan/screens/signup/todo_signup.dart';
 import 'package:flutter/material.dart';
+import '../../services/todo_firebase.dart';
 import '../../utils/error_alert.dart';
 import '../../widgets/core/todo_button.dart';
 import '../../widgets/core/todo_textfield.dart';
@@ -47,6 +48,7 @@ class _FiA3RohanLoginState extends State<FiA3RohanLogin> {
               loading = true;
             },
           );
+          TodoFirebaseHelper.uid = value.user!.uid;
         },
       ).onError(
         (error, stackTrace) {
@@ -66,8 +68,7 @@ class _FiA3RohanLoginState extends State<FiA3RohanLogin> {
       body: Center(
         child: Column(
           children: [
-            FiA3RohanSizedBox.height40,
-            FiA3RohanSizedBox.height40,
+            FiA3RohanSizedBox.height20,
             FiA3RohanSizedBox.height20,
             Image.asset(
               FiA3RohanImages.clock,
@@ -83,7 +84,7 @@ class _FiA3RohanLoginState extends State<FiA3RohanLogin> {
               "Please enter the details below to continue",
               style: TextStyle(fontSize: 17, color: FiA3RohanColors.lightgrey),
             ),
-            FiA3RohanSizedBox.height40,
+            FiA3RohanSizedBox.height10,
             Form(
               key: formkey,
               child: Column(
@@ -139,7 +140,7 @@ class _FiA3RohanLoginState extends State<FiA3RohanLogin> {
                       color: Color(0xff323F4B),
                     ),
                   ),
-                  FiA3RohanSizedBox.height30,
+                  FiA3RohanSizedBox.height10,
                   FiA3RohanButton(
                     loading: loading,
                     onPressed: () {
@@ -149,7 +150,24 @@ class _FiA3RohanLoginState extends State<FiA3RohanLogin> {
                     color: const Color.fromARGB(255, 33, 172, 182),
                     child: const Text("login"),
                   ),
-                  FiA3RohanSizedBox.height20,
+                  FiA3RohanSizedBox.height10,
+                  FiA3RohanButton(
+                    loading: loading,
+                    onPressed: () {
+                      TodoFirebaseHelper().signInWithGoogle();
+                    },
+                    color: Colors.white,
+                    child: Row(children: [
+                      SizedBox(
+                          width: 70,
+                          height: 70,
+                          child: Image.asset("assets/google.png")),
+                      const Text(
+                        "Sign in with Google",
+                        style: TextStyle(color: Colors.black, fontSize: 15),
+                      ),
+                    ]),
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

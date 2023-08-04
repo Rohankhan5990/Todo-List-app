@@ -1,20 +1,19 @@
-import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:file_picker/file_picker.dart';
-
+import 'package:fi_a3_rohan/widgets/design/todo_home_card.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import '../constants/static.dart';
 
 class TodoFirebaseHelper {
-  static final _firestore = FirebaseFirestore.instance;
-  final CollectionReference _usersCollection =
-      FirebaseFirestore.instance.collection('users');
-  static const userCollection = AppConstants.usersCollection;
-  PlatformFile? platformFile;
+  final CollectionReference _usersCollection = FirebaseFirestore.instance
+      .collection("users")
+      .doc(TodoFirebaseHelper.uid)
+      .collection('userdata');
 
-  void addDataToFirestore(String task) async {
+  void addDataToFirestore(String task, String url) async {
     try {
-      final payload = {'task': task};
+      final payload = {'task': task, 'url': url};
       await _usersCollection
           .doc(DateTime.now().microsecondsSinceEpoch.toString())
           .set(payload);
@@ -23,22 +22,20 @@ class TodoFirebaseHelper {
     }
   }
 
-  static Future<List<Map<String, dynamic>>> getData() async {
-    try {
-      final users = await _firestore.collection(userCollection).get();
-      return users.docs.map((user) => user.data()).toList();
-    } catch (e) {
-      rethrow;
-    }
-  }
-
+  static const userCollection = AppConstants.usersCollection;
+  static final _firestore = FirebaseFirestore.instance;
+  static String uid = '';
+  final users = _firestore.collection(userCollection).doc(uid).get();
   static Stream<QuerySnapshot<Map<String, dynamic>>> fetchUser() {
     try {
       return _firestore
           .collection(userCollection)
+          .doc(uid)
+          .collection('userdata')
           .snapshots()
           .asBroadcastStream();
     } catch (e) {
+      debugPrint(e.toString());
       rethrow;
     }
   }
@@ -51,11 +48,29 @@ class TodoFirebaseHelper {
     }
   }
 
-  void updateDataToFirestore(String id, String text) async {
+  void updateDataToFirestore(String id, String text, String url) async {
     try {
-      await _usersCollection.doc(id).update({"task": text});
+      await _usersCollection.doc(id).update({"task": text, "url": url});
     } catch (e) {
       rethrow;
     }
+  }
+
+  Future<UserCredential> signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    // Once signed in, return the UserCredential
+    return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 }

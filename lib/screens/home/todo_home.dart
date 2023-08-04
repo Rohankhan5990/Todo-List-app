@@ -1,8 +1,11 @@
+import 'package:fi_a3_rohan/screens/login/todo_login.dart';
 import 'package:fi_a3_rohan/widgets/design/todo_alert_write.dart';
 import 'package:fi_a3_rohan/constants/static.dart';
 import 'package:fi_a3_rohan/widgets/design/todo_home_card.dart';
 import 'package:flutter/material.dart';
+import '../../utils/error_alert.dart';
 import '../../widgets/design/todo_avator.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class FiA3RohanHome extends StatefulWidget {
   const FiA3RohanHome({super.key});
@@ -12,6 +15,8 @@ class FiA3RohanHome extends StatefulWidget {
 }
 
 class _FiA3RohanHomeState extends State<FiA3RohanHome> {
+  final auth = FirebaseAuth.instance;
+
   bool showListView = false;
 
   @override
@@ -24,7 +29,7 @@ class _FiA3RohanHomeState extends State<FiA3RohanHome> {
             children: [
               Container(
                 width: double.infinity,
-                height: 180,
+                height: 130,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 33, 172, 182),
                   borderRadius: BorderRadius.only(
@@ -37,8 +42,36 @@ class _FiA3RohanHomeState extends State<FiA3RohanHome> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Icon(Icons.menu),
+                      InkWell(
+                        onTap: () {
+                          auth
+                              .signOut()
+                              .then(
+                                (value) => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => FiA3RohanLogin(),
+                                  ),
+                                ),
+                              )
+                              .onError(
+                                (error, stackTrace) =>
+                                    ErrorAlertbox().toastMessage(
+                                  error.toString(),
+                                ),
+                              );
+                        },
+                        child: const Row(children: [
+                          Icon(Icons.logout),
+                          Text(
+                            "logout",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ]),
+                      ),
                       FiA2RohanAvator(
+                        height: 60,
+                        width: 60,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(50),
                           child: Image.asset(FiA3RohanImages.rohan,
@@ -65,13 +98,13 @@ class _FiA3RohanHomeState extends State<FiA3RohanHome> {
                   ),
                 ],
               ),
-              const HomeCard(),
+              HomeCard(),
               FiA3RohanSizedBox.height10,
               InkWell(
                 onTap: () {
                   showDialog(
                     context: context,
-                    builder: (context) => const FiA3RohanAlertWrite(),
+                    builder: (context) => FiA3RohanAlertWrite(),
                   );
                   if (!showListView) {
                     setState(

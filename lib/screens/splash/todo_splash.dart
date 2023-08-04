@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:fi_a3_rohan/constants/static.dart';
+import 'package:fi_a3_rohan/screens/splash/todo_splash_services.dart';
 
 import 'package:flutter/material.dart';
 import '../login/todo_login.dart';
@@ -11,14 +12,12 @@ class FiA3RohanSplasher extends StatefulWidget {
 }
 
 class _FiA3RohanSplasherState extends State<FiA3RohanSplasher> {
+  SplashServices splashscreen = SplashServices();
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(const Duration(milliseconds: 4000), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => FiA3RohanLogin()));
-    });
+    splashscreen.login(context);
   }
 
   @override

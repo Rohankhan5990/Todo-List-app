@@ -1,4 +1,5 @@
 import 'package:fi_a3_rohan/services/todo_firebase.dart';
+import 'package:fi_a3_rohan/widgets/design/todo_home_card.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -26,7 +27,7 @@ class _FiA3RohanAlertUpdateState extends State<FiA3RohanAlertUpdate> {
                 onPressed: () {
                   String taskdata = controller.text;
                   TodoFirebaseHelper()
-                      .updateDataToFirestore(widget.data, taskdata);
+                      .updateDataToFirestore(widget.data, taskdata, "");
                   Navigator.pop(context);
                 },
                 child: const Text("OK"))
